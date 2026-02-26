@@ -103,18 +103,18 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-50 via-white to-zinc-100 px-4 py-12 text-zinc-900 dark:from-zinc-950 dark:via-black dark:to-zinc-900 dark:text-zinc-50">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-100 px-4 py-12 text-zinc-900">
       <main className="mx-auto w-full max-w-2xl">
-        <div className="rounded-3xl border border-zinc-200/70 bg-white/80 p-8 shadow-2xl shadow-zinc-200/40 backdrop-blur dark:border-zinc-800/70 dark:bg-zinc-950/80 dark:shadow-black/60">
+        <div className="rounded-3xl border border-amber-200/70 bg-white/90 p-8 shadow-2xl shadow-amber-200/40 backdrop-blur">
           <header className="space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white dark:bg-white dark:text-zinc-900">
+            <div className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
               Minimal TODO
             </div>
             <div>
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 Keep tasks calm, focused, and delightful.
               </h1>
-              <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+              <p className="mt-2 text-sm text-zinc-500">
                 Everything stays locally on your device. No accounts, no clutter.
               </p>
             </div>
@@ -132,20 +132,20 @@ export default function Home() {
               value={text}
               onChange={(event) => setText(event.target.value)}
               placeholder="Add something meaningful..."
-              className="flex-1 rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20 dark:border-zinc-800 dark:bg-zinc-900/60 dark:focus:border-zinc-100 dark:focus:ring-zinc-100/20"
+              className="flex-1 rounded-2xl border border-amber-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
             />
             <button
               type="submit"
-              className="rounded-2xl bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
+              className="rounded-2xl bg-amber-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-600/20 transition hover:bg-amber-500"
             >
               Add task
             </button>
           </form>
 
           <section className="mt-8 space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-medium text-zinc-500">
               <div className="flex items-center gap-3">
-                <span className="rounded-full bg-zinc-100 px-3 py-1 text-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
+                <span className="rounded-full bg-amber-100 px-3 py-1 text-amber-800">
                   {stats.remaining} remaining
                 </span>
                 <span>{stats.completed} completed</span>
@@ -153,7 +153,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={clearCompleted}
-                className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                className="text-zinc-600 transition hover:text-amber-700"
               >
                 Clear completed
               </button>
@@ -171,8 +171,8 @@ export default function Home() {
                   onClick={() => setFilter(item.key)}
                   className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
                     filter === item.key
-                      ? "bg-zinc-900 text-white shadow-sm dark:bg-white dark:text-zinc-900"
-                      : "border border-zinc-200 text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+                      ? "bg-amber-600 text-white shadow-sm"
+                      : "border border-amber-200 text-zinc-500 hover:text-amber-700"
                   }`}
                 >
                   {item.label}
@@ -182,14 +182,14 @@ export default function Home() {
 
             <ul className="space-y-3">
               {filteredTodos.length === 0 ? (
-                <li className="rounded-2xl border border-dashed border-zinc-200 px-4 py-6 text-center text-sm text-zinc-400 dark:border-zinc-800 dark:text-zinc-500">
+                <li className="rounded-2xl border border-dashed border-amber-200 px-4 py-6 text-center text-sm text-zinc-400">
                   Nothing here yet. Add a task to get started.
                 </li>
               ) : (
                 filteredTodos.map((todo) => (
                   <li
                     key={todo.id}
-                    className="flex items-center justify-between gap-4 rounded-2xl border border-zinc-200/70 bg-white px-4 py-3 shadow-sm transition hover:border-zinc-300 dark:border-zinc-800/80 dark:bg-zinc-900/60 dark:hover:border-zinc-700"
+                    className="flex items-center justify-between gap-4 rounded-2xl border border-amber-200/70 bg-white px-4 py-3 shadow-sm transition hover:border-amber-300"
                   >
                     <div className="flex items-center gap-3">
                       <button
@@ -198,8 +198,8 @@ export default function Home() {
                         aria-pressed={todo.completed}
                         className={`flex h-6 w-6 items-center justify-center rounded-full border transition ${
                           todo.completed
-                            ? "border-zinc-900 bg-zinc-900 text-white dark:border-white dark:bg-white dark:text-zinc-900"
-                            : "border-zinc-300 text-transparent hover:border-zinc-500 dark:border-zinc-700 dark:hover:border-zinc-500"
+                            ? "border-amber-600 bg-amber-600 text-white"
+                            : "border-amber-300 text-transparent hover:border-amber-500"
                         }`}
                       >
                         <span className="text-xs">✓</span>
@@ -208,13 +208,13 @@ export default function Home() {
                         <p
                           className={`text-sm font-medium ${
                             todo.completed
-                              ? "text-zinc-400 line-through dark:text-zinc-500"
-                              : "text-zinc-900 dark:text-zinc-100"
+                              ? "text-zinc-400 line-through"
+                              : "text-zinc-900"
                           }`}
                         >
                           {todo.text}
                         </p>
-                        <p className="text-xs text-zinc-400 dark:text-zinc-500">
+                        <p className="text-xs text-zinc-400">
                           {new Date(todo.createdAt).toLocaleDateString(undefined, {
                             month: "short",
                             day: "numeric",
@@ -225,7 +225,7 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={() => deleteTodo(todo.id)}
-                      className="rounded-full px-3 py-1 text-xs font-semibold text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                      className="rounded-full px-3 py-1 text-xs font-semibold text-zinc-400 transition hover:bg-amber-50 hover:text-amber-700"
                     >
                       Remove
                     </button>
